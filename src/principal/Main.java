@@ -2,8 +2,6 @@ package principal;
 
 import modelos.CartaoDeCredito;
 import modelos.Produto;
-
-import java.sql.SQLOutput;
 import java.util.*;
 
 public class Main {
@@ -45,8 +43,8 @@ public class Main {
         listaDeCompras.sort(Comparator.comparing(Produto::getValor));
         System.out.println("************************");
         System.out.println("   COMPRAS REALIZADAS   \n");
-        for (int i = 0; i < listaDeCompras.size(); i++) {
-            System.out.println(listaDeCompras.get(i).toString());
+        for (Produto listaDeCompra : listaDeCompras) {
+            System.out.println(listaDeCompra.toString());
         }
         System.out.println("************************");
         System.out.println("Saldo do cartão: " + cartao.getLimite() + "\n");
